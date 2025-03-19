@@ -1,0 +1,237 @@
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5c7285;
+  overflow: visible;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  transition: transform 0.4s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.rainbow-glow1,
+.rainbow-glow2,
+.rainbow-glow3,
+.rainbow-glow4 {
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out, filter 0.5s ease-in-out;
+  display: inline-block;
+  padding: 2px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 200%;
+    right: -50%;
+    bottom: -50%;
+    top: -50%;
+    background-position: center center;
+    background-image: conic-gradient(
+      from 0 at 50% 50%,
+      transparent 50%,
+      #fff845,
+      #1cc98c,
+      #24cbde,
+      #57a9f7,
+      #bd52f9,
+      #ebb347
+    );
+    animation: rainbowGlowRotate 2s linear infinite;
+    filter: blur(250px) brightness(1.2);
+  }
+  .card1,
+  .card2,
+  .card3,
+  .card4 {
+    padding: 2px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 200%;
+      right: -50%;
+      bottom: -50%;
+      top: -50%;
+      background-position: center center;
+      background-image: conic-gradient(
+        from 0 at 50% 50%,
+        transparent 50%,
+        #fff845,
+        #1cc98c,
+        #24cbde,
+        #57a9f7,
+        #bd52f9,
+        #ebb347
+      );
+      animation: rainbowRotate 4s linear infinite;
+    }
+  }
+  .content1,
+  .content2,
+  .content3,
+  .content4 {
+    padding: 5px;
+    background: #5c7285;
+    position: relative;
+    z-index: 1;
+    height: 200px;
+    width: 200px;
+    border-radius: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+}
+
+@keyframes rainbowRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rainbowGlowRotate {
+  0% {
+    transform: rotate(0deg) scale(0.3);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.5);
+  }
+}
+
+.img1,
+.img2,
+.img3,
+.img4 {
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.rainbow-glow1:hover,
+.rainbow-glow2:hover,
+.rainbow-glow3:hover,
+.rainbow-glow4:hover {
+  transform: translateY(-25px);
+}
+
+.container:hover .rainbow-glow {
+  filter: blur(5px);
+}
+
+.container .rainbow-glow:hover {
+  filter: blur(0);
+  transform: translateY(-25px);
+}
+
+/* HP SAYA */
+
+@media screen and (max-width: 720px) {
+  body {
+    height: 100vh;
+  }
+
+  .container {
+    flex-direction: column;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .container:hover .rainbow-glow {
+    filter: none;
+  }
+
+  .rainbow-glow {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 421px) {
+  body {
+    height: 100vh;
+  }
+
+  .container {
+    flex-direction: column;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .container:hover .rainbow-glow {
+    filter: none;
+  }
+
+  .rainbow-glow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+      height: 100vh;
+    }
+  
+    .container {
+      flex-direction: column;
+  
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+  
+    .container:hover .rainbow-glow {
+      filter: none;
+    }
+  
+    .rainbow-glow {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
